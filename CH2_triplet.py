@@ -1,3 +1,7 @@
+# This code is based on Guido Falk von Rudorff's implementation for PySCF
+# https://gist.github.com/ferchault/7cb7622fbd7d930aced795abf04e9ce2
+# Use at your own risk
+
 import pyscf
 import numpy as np
 import pyscf.lo
@@ -25,7 +29,7 @@ def calc_dm(C, Sbar, Sprime, Sprimeinv, minimal, O):
     dm = (loc_orb * O) @ loc_orb.T 
     return dm
 
-# Original code from: https://github.com/NablaChem/prototype/blob/b92ec8b6f2a7f864056c941adec23c2c31005b9b/minpop/demo.py#L10
+# Original code from: https://gist.github.com/ferchault/7cb7622fbd7d930aced795abf04e9ce2
 def minpop(calculation: pyscf.scf.UHF,spin) -> np.ndarray:
     """Implements the minimum population localization method.
 
